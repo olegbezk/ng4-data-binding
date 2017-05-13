@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <app-cocpit
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)">
+  </app-cocpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-component
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement">
+      </app-server-component>
+    </div>
+  </div>
+</div>
